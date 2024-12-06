@@ -21,7 +21,7 @@ public class BitTreeExperiments {
   /**
    * Some of the conversion from braille to ASCII.
    */
-  static final String b2a =
+  static final String B2A =
       """
       100000,A
       110000,B
@@ -140,22 +140,22 @@ public class BitTreeExperiments {
   static void experiment02(PrintWriter pen) {
     pen.println("Experiment 02");
     pen.println("-------------");
-    BitTree b2aTree = new BitTree(6);
-    InputStream b2aStream = new ByteArrayInputStream(b2a.getBytes());
-    b2aTree.load(b2aStream);
+    BitTree b2ATree = new BitTree(6);
+    InputStream b2AStream = new ByteArrayInputStream(B2A.getBytes());
+    b2ATree.load(b2AStream);
     try {
-      b2aStream.close();
+      b2AStream.close();
     } catch (IOException e) {
       // We don't care if we can't close the stream.
     } // try/catch
-    get(pen, b2aTree, "100000");
-    get(pen, b2aTree, "110000");
-    get(pen, b2aTree, "100100");
-    get(pen, b2aTree, "100110");
-    get(pen, b2aTree, "100010");
-    get(pen, b2aTree, "101000");
+    get(pen, b2ATree, "100000");
+    get(pen, b2ATree, "110000");
+    get(pen, b2ATree, "100100");
+    get(pen, b2ATree, "100110");
+    get(pen, b2ATree, "100010");
+    get(pen, b2ATree, "101000");
     pen.println("Contents:");
-    b2aTree.dump(pen);
+    b2ATree.dump(pen);
     separator(pen);
   } // experiment02(PrintWriter)
 
@@ -174,7 +174,7 @@ public class BitTreeExperiments {
 
     experiment01(pen);
     experiment02(pen);
-    
+
     pen.close();
   } // main(String[])
 

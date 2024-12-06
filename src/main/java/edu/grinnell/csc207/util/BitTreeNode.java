@@ -4,6 +4,9 @@ package edu.grinnell.csc207.util;
  * Nodes intended for use as branches and leaves in a BitTree class.
  * Is parametrically typed.
  *
+ * @param <T>
+ *   The type of the value of the node
+ *
  * @author Cade Johnston
  */
 public class BitTreeNode<T> {
@@ -29,18 +32,15 @@ public class BitTreeNode<T> {
 
   /**
    * Build an empty BitTreeNode.
-   * 
-   * @param val
-   *   The value of the node.
    */
   public BitTreeNode() {
   } // BitTree()
 
   /**
    * Build an empty BitTreeNode with a parent.
-   * 
-   * @param val
-   *   The value of the node.
+   *
+   * @param parent
+   *   The parent of the node.
    */
   public BitTreeNode(BitTreeNode<T> parent) {
     this.parentNode = parent;
@@ -91,14 +91,14 @@ public class BitTreeNode<T> {
   } // getLeft()
 
   /**
-   * Update the left child of this node.
+   * Update the right child of this node.
    *
-   * @param newLeft
-   *   The new left child of this node.
+   * @param newRight
+   *   The new right child of this node.
    */
   public void setRight(BitTreeNode<T> newRight) {
     this.rightNode = newRight;
-  } // setLeft(BitTreeNode<T>)
+  } // setRight(BitTreeNode<T>)
 
   /**
    * Return the left child of this node.
@@ -108,27 +108,27 @@ public class BitTreeNode<T> {
    */
   public BitTreeNode<T> getRight() {
     return this.rightNode;
-  } // getLeft()
+  } // getRight()
 
   /**
-   * Update the left child of this node.
+   * Update the parent of this node.
    *
-   * @param newLeft
-   *   The new left child of this node.
+   * @param newParent
+   *   The new parent of this node.
    */
   public void setParent(BitTreeNode<T> newParent) {
     this.parentNode = newParent;
-  } // setLeft(BitTreeNode<T>)
+  } // setParent(BitTreeNode<T>)
 
   /**
-   * Return the left child of this node.
+   * Return the parent of this node.
    *
    * @return
-   *   The left child of this node.
+   *   The parent of this node.
    */
   public BitTreeNode<T> getParent() {
     return this.parentNode;
-  } // getLeft()
+  } // getParent()
 
   /**
    * Return if this node has any children.
